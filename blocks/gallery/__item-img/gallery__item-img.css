@@ -1,6 +1,6 @@
 .gallery__item-img {
   width: 100%;
-  max-width: 282px;
+  min-width: 282px;
   max-height: 282px;
   min-height: 282px;
   border-radius: 8px 8px 0 0;

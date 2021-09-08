@@ -7,3 +7,24 @@
   color: #545454;
   padding-bottom: 60px;
 }
+
+@media screen and (max-width: 910px) {
+  .page__footer {
+    max-width: 700px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .page__footer {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .page__footer {
+    max-width: 282px;
+    padding-bottom: 36px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
