@@ -1,0 +1,13 @@
+.page__gallery {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  margin-top: 51px;
+  display: grid;
+  row-gap: 20px;
+  column-gap: 17px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 361px;
+  grid-auto-rows: 361px;
+  max-width: 880px;
+  padding-bottom: 66px;
+}

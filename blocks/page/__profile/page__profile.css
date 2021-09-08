@@ -1,0 +1,9 @@
+.page__profile {
+  margin: 0 auto;
+  padding-top: 40px;
+  max-width: 880px;
+  min-height: 120px;
+  display: grid;
+  grid-template-columns: 169px 325px 1fr 1fr;
+  align-items: center;
+}

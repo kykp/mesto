@@ -1,0 +1,12 @@
+.gallery__description-img {
+  background: url(../../../images/heart.svg);
+  width: 22px;
+  height: 19px;
+  background-repeat: no-repeat;
+}
+
+.gallery__description-img:hover {
+  opacity: 0.5;
+  cursor: pointer;
+  outline: none;
+}

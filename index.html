@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <title>Проектная работа 4</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header page__header">
+        <img src="./images/logo_header.svg" alt="logo" class="logo" />
+      </header>
+      <main>
+        <section class="profile page__profile">
+          <div class="profile__avatar">
+            <img
+              src="./images/logo_profile.svg"
+              alt="Логотип профиля"
+              class="profile__avatar-img"
+            />
+          </div>
+          <div class="profile__info">
+            <h2 class="profile__info-title">Жак-Ив Кусто</h2>
+
+            <p class="profile__info-subtitle">Исследователь океана</p>
+          </div>
+
+          <button class="profile__info-img link-hover">
+            <img src="./images/btn_edit.png" alt="кнопка изменения профиля" />
+          </button>
+
+          <button class="profile__button link-hover">
+            <img src="./images/Vector.png" alt="крестик кнопки" />
+          </button>
+        </section>
+        <section class="gallery page__gallery">
+          <div class="gallery__item">
+            <img src="./images/1.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Сэндвич</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+
+          <div class="gallery__item">
+            <img src="./images/2.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Лихолесье</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+
+          <div class="gallery__item">
+            <img src="./images/3.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Свечение</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+
+          <div class="gallery__item">
+            <img src="./images/4.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Скейт</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+
+          <div class="gallery__item">
+            <img src="./images/5.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Пешеход</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+
+          <div class="gallery__item">
+            <img src="./images/6.jpg" alt="" class="gallery__item-img" />
+            <div class="gallery__description">
+              <h2 class="gallery__description-title">Взлетная полоса</h2>
+              <div class="gallery__description-img"></div>
+            </div>
+          </div>
+        </section>
+
+        <div class="popup">
+          <div class="popup__container">
+            <div class="popup__container-item">
+              <h2 class="popup__profile">Редактировать профиль</h2>
+              <input type="text" class="popup__title" />
+              <input type="text" class="popup__subtitle" />
+              <button class="popup__button">Сохранить</button>
+            </div>
+            <img
+              src="./images/Close Icon.svg"
+              alt="крест закрытия"
+              class="popup__close link-hover"
+            />
+          </div>
+        </div>
+      </main>
+      <footer class="footer page__footer">
+        <p class="footer_copyright">© 2020 Mesto Russia</p>
+      </footer>
+    </div>
+    <script src="./js/js.js"></script>
+  </body>
+</html>
