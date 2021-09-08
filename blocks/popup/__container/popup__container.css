@@ -9,3 +9,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@media screen and (max-width: 400px) {
+  .popup__container {
+    min-width: 282px;
+    min-height: 322px;
+    background: #ffffff;
+  }
+}
