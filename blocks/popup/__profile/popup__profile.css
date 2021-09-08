@@ -6,3 +6,10 @@
   margin-top: 34px;
   text-align: center;
 }
+
+@media screen and (max-width: 400px) {
+  .popup__profile {
+    font-size: 18px;
+    line-height: 22px;
+  }
+}

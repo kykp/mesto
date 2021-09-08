@@ -5,3 +5,10 @@
   font-size: 42px;
   line-height: 48px;
 }
+
+@media screen and (max-width: 400px) {
+  .profile__info-title {
+    font-size: 27px;
+    line-height: 33px;
+  }
+}
