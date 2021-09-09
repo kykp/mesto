@@ -3,3 +3,10 @@
   top: -40px;
   right: -40px;
 }
+
+@media screen and (max-width: 400px) {
+  .popup__close {
+    max-width: 20px;
+    right: 0;
+  }
+}
