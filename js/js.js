@@ -19,7 +19,8 @@ function popupClose () {
     activ.classList.remove('popup_active');
 }
 
-function addButton () {
+function addButton (evt) {
+    evt.preventDefault();
     let title = document.querySelector('.profile__info-title');
     let subtitle = document.querySelector('.profile__info-subtitle');
     let webTitle = document.querySelector('.popup__title');
