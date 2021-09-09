@@ -4,6 +4,6 @@
   max-height: 23px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: baseline;
   margin-top: 25px;
 }
