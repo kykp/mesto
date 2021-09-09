@@ -3,3 +3,9 @@
   min-height: 259px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 400px) {
+  .popup__container-item {
+    max-width: 238px;
+  }
+}
