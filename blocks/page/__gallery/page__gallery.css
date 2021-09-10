@@ -14,18 +14,17 @@
 
 @media screen and (max-width: 910px) {
   .page__gallery {
-    max-width: 700px;
-    grid-template-columns: 1fr 1fr;
+    max-width: 582px;
+    grid-template-columns: 282px 282px;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 620px) {
   .page__gallery {
-    max-width: 400px;
-    grid-template-columns: 1fr;
+    max-width: 282px;
+    grid-template-columns: 282px;
   }
 }
-
 @media screen and (max-width: 400px) {
   .page__gallery {
     max-width: 282px;

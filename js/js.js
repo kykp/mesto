@@ -5,6 +5,7 @@ let profileButton = document.querySelector('.popup__button');
 let heart = document.querySelector('.gallery__description-img');
 
 
+
 function popup () {
     let title = document.querySelector('.profile__info-title').innerHTML;
     let subtitle = document.querySelector('.profile__info-subtitle').innerHTML;
@@ -31,8 +32,8 @@ function addButton (evt) {
 
 }
 
- function like () {    
-heart.classList.toggle('gallery__description-img_selected');
+ function like () {   
+     heart.classList.toggle('gallery__description-img_selected');
  }
 
 edit.addEventListener('click', popup);

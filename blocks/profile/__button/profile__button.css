@@ -7,6 +7,12 @@
   border-radius: 2px;
 }
 
+@media screen and (max-width: 910px) {
+  .profile__button {
+    grid-column-start: 2;
+    max-width: 350px;
+  }
+}
 @media screen and (max-width: 720px) {
   .profile__button {
     margin: 0 auto;
