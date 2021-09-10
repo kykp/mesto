@@ -1,6 +1,6 @@
 .profile__info-img {
-  max-width: 24px;
-  max-height: 24px;
+  width: 24px;
+  height: 24px;
   background: #000;
   color: #fff;
   border: 1px solid #ffffff;
@@ -23,8 +23,8 @@
 
 @media screen and (max-width: 400px) {
   .profile__info-img {
-    max-width: 18px;
-    max-height: 18px;
+    width: 18px;
+    height: 18px;
     margin-right: 16px;
     margin-bottom: 6px;
   }
