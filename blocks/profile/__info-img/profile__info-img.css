@@ -1,12 +1,12 @@
 .profile__info-img {
-  width: 20px;
-  height: 20px;
+  max-width: 24px;
+  max-height: 24px;
   background: #000;
   color: #fff;
   border: 1px solid #ffffff;
   box-sizing: border-box;
   padding: 0px;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
 }
 
 @media screen and (max-width: 720px) {
@@ -23,7 +23,9 @@
 
 @media screen and (max-width: 400px) {
   .profile__info-img {
-    margin-right: 10px;
-    margin-bottom: 8px;
+    max-width: 18px;
+    max-height: 18px;
+    margin-right: 16px;
+    margin-bottom: 6px;
   }
 }
