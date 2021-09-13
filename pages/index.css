@@ -2,8 +2,8 @@
 @import url(../vendor/fonts.css);
 
 @import url(../blocks/page/page.css);
-@import url(../blocks/header/header.css);
 @import url(../blocks/page/__header/page__header.css);
+@import url(../blocks/logo/logo.css);
 
 @import url(../blocks/logo/_place_header/logo_place_header.css);
 
@@ -25,7 +25,6 @@
 @import url(../blocks/gallery/__description-img/gallery__description-img.css);
 @import url(../blocks/gallery/gallery.css);
 
-@import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
 @import url(../blocks/page/__footer/page__footer.css);
 
