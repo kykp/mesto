@@ -1,42 +1,38 @@
-let edit = document.querySelector('.profile__info-img');
-let activ = document.querySelector('.popup');
+let popupMenuButton = document.querySelector('.profile__info-button');
+let popupClassActive = document.querySelector('.popup');
 let popClose = document.querySelector('.popup__close');
 let profileButton = document.querySelector('.popup__button');
-let heart = document.querySelector('.gallery__description-img');
+// let heart = document.querySelector('.gallery__description-img');
+
+let title = document.querySelector('.profile__info-title');
+let subtitle = document.querySelector('.profile__info-subtitle');
+
+let formElement = document.querySelector('.popup__container-item');
+let webTitle = document.querySelector('input[name="popupTitle"]');
+let webSubtitle = document.querySelector('input[name="popupSubtitle"]');
 
 
-function popup () {
-    let title = document.querySelector('.profile__info-title').innerHTML;
-    let subtitle = document.querySelector('.profile__info-subtitle').innerHTML;
-    let webTitle = document.querySelector('.popup__title');
-    let webSubtitle = document.querySelector('.popup__subtitle');
-    activ.classList.add('popup_active');
-    webTitle.value = title;
-    webSubtitle.value = subtitle;
-}
-
-function popupClose () {
-    activ.classList.remove('popup_active');
-}
-
-function addButton (evt) {
-    evt.preventDefault();
-    let title = document.querySelector('.profile__info-title');
-    let subtitle = document.querySelector('.profile__info-subtitle');
-    let webTitle = document.querySelector('.popup__title');
-    let webSubtitle = document.querySelector('.popup__subtitle');
-    title.innerHTML = webTitle.value;
-    subtitle.innerHTML = webSubtitle.value;
-    activ.classList.remove('popup_active');
-
-}
-
- function like () {    
-heart.classList.toggle('gallery__description-img_selected');
+function popupActivation () {
+     popupClassActive.classList.toggle('popup_active');
+     webTitle.value = title.textContent;
+     webSubtitle.value = subtitle.textContent;
  }
+function popupClose () {
+    popupClassActive.classList.toggle('popup_active');
+ }
+function formSubmitHandler (evt) {
+    evt.preventDefault(); 
+    title.textContent = webTitle.value;
+    subtitle.textContent = webSubtitle.value;
+    popupClose();
+}
 
-edit.addEventListener('click', popup);
-popClose.addEventListener('click', popupClose);
-profileButton.addEventListener('click', addButton);
-heart.addEventListener('click', like);
+//   function doLike () {    
+//      heart.classList.toggle('gallery__description-img_selected');
+//   }
+
+ popupMenuButton.addEventListener('click', popupActivation);
+ popClose.addEventListener('click', popupClose);
+ formElement.addEventListener('submit', formSubmitHandler); 
+// heart.addEventListener('click', doLike);
 

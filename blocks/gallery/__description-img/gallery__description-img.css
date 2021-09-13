@@ -3,6 +3,8 @@
   width: 22px;
   height: 19px;
   background-repeat: no-repeat;
+  border: none;
+  padding-bottom: 24px;
 }
 
 .gallery__description-img:hover {

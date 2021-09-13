@@ -8,9 +8,6 @@
 
 @media screen and (max-width: 400px) {
   .profile__info {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    margin-top: 22px;
+    margin-top: 10px;
   }
 }

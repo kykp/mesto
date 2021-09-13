@@ -5,6 +5,10 @@
   background: #000000;
   border-radius: 2px;
   color: #ffffff;
+  border: none;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
 }
 
 .popup__button:hover {
@@ -17,5 +21,8 @@
     margin-top: 45px;
     min-width: 238px;
     min-height: 46px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
