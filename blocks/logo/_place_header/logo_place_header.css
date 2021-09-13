@@ -1,0 +1,9 @@
+.logo_place_header {
+  max-width: 142px;
+}
+
+@media screen and (max-width: 400px) {
+  .logo_place_header {
+    max-width: 104px;
+  }
+}

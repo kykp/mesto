@@ -1,9 +1,8 @@
 .gallery__description {
   margin: 0 auto;
   max-width: 246px;
-  max-height: 23px;
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  margin-top: 25px;
+  align-items: end;
+  margin-top: 17px;
 }

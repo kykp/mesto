@@ -10,45 +10,42 @@
   <body>
     <div class="page">
       <header class="header page__header">
-        <img src="./images/logo_header.svg" alt="logo" class="logo" />
+        <img
+          src="./images/logo_header.svg"
+          alt="Логотип сайта"
+          class="logo logo_place_header"
+        />
       </header>
       <main>
         <section class="profile page__profile">
-          <div class="profile__avatar">
-            <img
-              src="./images/logo_profile.svg"
-              alt="Логотип профиля"
-              class="profile__avatar-img"
-            />
-          </div>
+          <img
+            src="./images/logo_profile.svg"
+            alt="Логотип профиля"
+            class="profile__avatar-img"
+          />
           <div class="profile__info">
-            <h2 class="profile__info-title">Жак-Ив Кусто</h2>
-
+            <h1 class="profile__info-title">Жак-Ив Кусто</h1>
             <p class="profile__info-subtitle">Исследователь океана</p>
           </div>
-
-          <button class="profile__info-img link-hover">
-            <img src="./images/btn_edit.png" alt="кнопка изменения профиля" />
-          </button>
-
-          <button class="profile__button link-hover">
-            <img src="./images/Vector.png" alt="крестик кнопки" />
-          </button>
+          <button
+            type="button"
+            class="profile__info-button link-hover"
+          ></button>
+          <button type="button" class="profile__button link-hover"></button>
         </section>
         <section class="gallery page__gallery">
           <div class="gallery__item">
             <img src="./images/1.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Сэндвич</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
-
           <div class="gallery__item">
             <img src="./images/2.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Лихолесье</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
 
@@ -56,48 +53,40 @@
             <img src="./images/3.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Свечение</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
-
           <div class="gallery__item">
             <img src="./images/4.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Скейт</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
-
           <div class="gallery__item">
             <img src="./images/5.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Пешеход</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
-
           <div class="gallery__item">
             <img src="./images/6.jpg" alt="" class="gallery__item-img" />
             <div class="gallery__description">
               <h2 class="gallery__description-title">Взлетная полоса</h2>
-              <div class="gallery__description-img"></div>
+              <button type="button" class="gallery__description-img"></button>
             </div>
           </div>
         </section>
-
         <div class="popup">
           <div class="popup__container">
-            <form class="popup__container-item">
-              <h2 class="popup__profile">Редактировать профиль</h2>
-              <input type="text" class="popup__title" />
-              <input type="text" class="popup__subtitle" />
-              <button class="popup__button">Сохранить</button>
+            <h2 class="popup__profile">Редактировать профиль</h2>
+            <form name="pForm" class="popup__container-item">
+              <input name="popupTitle" type="text" class="popup__input" />
+              <input name="popupSubtitle" type="text" class="popup__input" />
+              <button type="submit" class="popup__button">Сохранить</button>
+              <button type="button" class="popup__close link-hover"></button>
             </form>
-            <img
-              src="./images/close_icon.svg"
-              alt="крест закрытия"
-              class="popup__close link-hover"
-            />
           </div>
         </div>
       </main>

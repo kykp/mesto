@@ -7,4 +7,7 @@
   left: 0;
   font-family: "Inter", Arial, Helvetica, sans-serif;
   visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
