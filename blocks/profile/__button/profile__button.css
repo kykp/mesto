@@ -9,14 +9,14 @@
   background-size: cover;
   box-sizing: border-box;
 }
-
 @media screen and (max-width: 910px) {
   .profile__button {
+    margin: 0 auto;
     grid-column-start: 2;
-    max-width: 350px;
+    grid-row-start: 2;
   }
 }
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 620px) {
   .profile__button {
     margin: 0 auto;
     grid-column-start: 1;

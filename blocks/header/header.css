@@ -4,16 +4,19 @@
   border: none;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 }
+
 @media screen and (max-width: 910px) {
   .header {
-    max-width: 700px;
+    max-width: 580px;
   }
 }
-@media screen and (max-width: 720px) {
+
+@media screen and (max-width: 620px) {
   .header {
     max-width: 400px;
   }
 }
+
 @media screen and (max-width: 400px) {
   .header {
     min-height: 54px;
