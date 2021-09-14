@@ -7,11 +7,11 @@
 
 @media screen and (max-width: 910px) {
   .header {
-    max-width: 700px;
+    max-width: 580px;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 620px) {
   .header {
     max-width: 400px;
   }
