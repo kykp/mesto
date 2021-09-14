@@ -4,6 +4,8 @@
 }
 @media screen and (max-width: 900px) {
   .page__profile {
+    max-width: 582px;
+    grid-template-columns: 150px 355px 1fr;
     padding-left: 20px;
     padding-right: 20px;
   }
