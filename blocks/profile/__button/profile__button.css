@@ -1,13 +1,14 @@
 .profile__button {
-  max-width: 150px;
   min-width: 150px;
   min-height: 50px;
   background: #000;
-  border: none;
-  background-image: url(../../../images/add_button.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  border: 2px solid #ffffff;
   box-sizing: border-box;
+  border-radius: 2px;
+  background-image: url(../../../images/add_button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5px;
 }
 @media screen and (max-width: 910px) {
   .profile__button {
@@ -27,7 +28,8 @@
 
 @media screen and (max-width: 400px) {
   .profile__button {
-    background-image: url(../../../images/add_button_320px.svg);
+    background-position: center;
+    background-size: 14px;
     min-width: 282px;
     margin-top: 28px;
   }
