@@ -31,6 +31,7 @@
 
 @import url(../blocks/link-hover/link-hover.css);
 @import url(../blocks/gallery/__description-img/_selected/gallery__description-img_selected.css);
+@import url(../blocks/gallery/__basket/gallery__basket.css);
 
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
