@@ -1,10 +1,9 @@
 .popup__container-item {
   max-width: 358px;
-  min-height: 259px;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
   .popup__container-item {
     max-width: 238px;
   }

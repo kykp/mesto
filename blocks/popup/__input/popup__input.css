@@ -1,19 +1,25 @@
-.popup__title {
+.popup__input {
   min-width: 358px;
-  min-height: 27px;
   font-weight: normal;
   font-size: 14px;
   line-height: 17px;
-  margin-top: 54px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   max-width: 80%;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  margin-top: 49px;
+  box-sizing: border-box;
+  padding-bottom: 8px;
 }
-@media screen and (max-width: 400px) {
-  .popup__title {
+
+.popup__input:nth-last-of-type(1) {
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .popup__input {
     min-width: 238px;
     margin-top: 75px;
   }

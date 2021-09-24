@@ -27,3 +27,5 @@
   - использование метода addEventListener
 
 - другие базовые техники верстки
+
+github pages - https://kykp.github.io/mesto/

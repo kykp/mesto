@@ -1,4 +1,31 @@
 .profile {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   color: #fff;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: 150px 316px 265px 1fr;
+  align-items: center;
+}
+@media screen and (max-width: 910px) {
+  .profile {
+    max-width: 580px;
+    grid-template-columns: 150px 316px 265px;
+    grid-template-rows: 140px 115px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .profile {
+    max-width: 400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 140px 115px 85px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .profile {
+    max-width: 282px;
+    grid-template-rows: 149px 77px 78px;
+  }
 }

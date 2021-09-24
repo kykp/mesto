@@ -1,13 +1,23 @@
 .profile__button {
-  max-width: 150px;
   min-width: 150px;
   min-height: 50px;
   background: #000;
   border: 2px solid #ffffff;
+  box-sizing: border-box;
   border-radius: 2px;
+  background-image: url(../../../images/add_button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 5px;
 }
-
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 910px) {
+  .profile__button {
+    margin: 0 auto;
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+}
+@media screen and (max-width: 620px) {
   .profile__button {
     margin: 0 auto;
     grid-column-start: 1;
@@ -18,7 +28,9 @@
 
 @media screen and (max-width: 400px) {
   .profile__button {
-    min-width: 100%;
-    margin-top: 36px;
+    background-position: center;
+    background-size: 14px;
+    min-width: 282px;
+    margin-top: 28px;
   }
 }

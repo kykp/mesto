@@ -1,33 +1,17 @@
 .page__profile {
   margin: 0 auto;
   padding-top: 40px;
-  max-width: 880px;
-  min-height: 120px;
-  display: grid;
-  grid-template-columns: 169px 325px 1fr 1fr;
-  align-items: center;
 }
-
 @media screen and (max-width: 900px) {
   .page__profile {
+    max-width: 582px;
+    grid-template-columns: 150px 355px 1fr;
     padding-left: 20px;
     padding-right: 20px;
   }
 }
-
-@media screen and (max-width: 720px) {
-  .page__profile {
-    max-width: 400px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px;
-    text-align: center;
-  }
-}
-
 @media screen and (max-width: 400px) {
   .page__profile {
-    max-width: 282px;
-    grid-template-rows: 124px 76px 86px;
-    padding-top: 38px;
+    padding-top: 25px;
   }
 }
