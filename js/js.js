@@ -115,8 +115,6 @@ function addGallery (event) {
   event.currentTarget.reset();
 }
 
-
-
 renderGallery();
 
 function deleteGallery (event) {
@@ -149,9 +147,7 @@ function doModalImage (event) {
 const popImg = document.querySelector('#image-show');
 const popImgClose = popImg.querySelector('.popup__close');
 
-
 popImgClose.addEventListener('click', () => popupClose(popImg));
-
 
 function popUpImage() {
   popImg.classList.add('popup_active');
