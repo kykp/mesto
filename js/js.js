@@ -14,6 +14,8 @@ let formProfile = document.querySelector('[name="profileForm"]');
 let webTitle = formProfile.querySelector('input[name="popupTitle"]');
 let webSubtitle = formProfile.querySelector('input[name="popupSubtitle"]');
 
+let descriptionTitle = document.querySelector('.gallery__description-title');
+
 function openPopup (popUp) {
     popUp.classList.add('popup_active');
     webTitle.value = profileTitle.textContent;
@@ -105,12 +107,14 @@ function addGallery (event) {
   
     
   listenersGallery(nGallery);
+
   galleryContainerElement.prepend(nGallery);
   
   popupClose(popupCreate);
   
   event.currentTarget.reset();
 }
+
 
 
 renderGallery();
@@ -123,5 +127,32 @@ function deleteGallery (event) {
 
 function listenersGallery (items) {
   items.querySelector(".gallery__basket").addEventListener("click", deleteGallery);
+  items.querySelector(".gallery__item-img").addEventListener('click', popUpImage);
+  items.querySelector(".gallery__item-img").addEventListener('click', doModalImage);
 }
 
+function doModalImage (event) {
+  const webImage = event.currentTarget.closest(".gallery__item-img");
+  const newImage = document.querySelector('.popup__image-zoom');
+  
+  newImage.src = webImage.src;
+
+  let modalText = document.querySelector('#image-show');
+  let txt = modalText.querySelector('.popup__profile');
+
+  let newTitle = event.currentTarget.closest('.gallery__item');
+  let newTitleContent = newTitle.querySelector('.gallery__description-title');
+
+  txt.textContent = newTitleContent.textContent;
+}
+
+const popImg = document.querySelector('#image-show');
+const popImgClose = popImg.querySelector('.popup__close');
+
+
+popImgClose.addEventListener('click', () => popupClose(popImg));
+
+
+function popUpImage() {
+  popImg.classList.add('popup_active');
+}
