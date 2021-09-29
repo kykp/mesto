@@ -99,7 +99,6 @@ function renderGallery () {
 
 function addGallery (gallery) {
   galleryContainerElement.append(gallery);
-  
 }
 
 function createCard (event) {
