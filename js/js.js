@@ -72,13 +72,13 @@ function submitProfileForm (evt) {
 
 formProfile.addEventListener('submit', submitProfileForm); 
 
-  const galleryContainerElement = document.querySelector('.gallery');
-  const formCreateGallery = document.querySelector('[name="createGalleryForm"]');
-  const galleryTemplateElement = document.querySelector('#gallery');
+const galleryContainerElement = document.querySelector('.gallery');
+const formCreateGallery = document.querySelector('[name="createGalleryForm"]');
+const galleryTemplateElement = document.querySelector('#gallery');
 
-  formCreateGallery.addEventListener('submit', createCard);
+formCreateGallery.addEventListener('submit', createCard);
 
-  function renderGallery () {
+function renderGallery () {
 
     initialCards.forEach(function (element) {
     const newGallery = galleryTemplateElement.content.cloneNode(true);
@@ -92,12 +92,14 @@ formProfile.addEventListener('submit', submitProfileForm);
 
     
     listenersGallery(newGallery);
-    galleryContainerElement.append(newGallery);
+    addGallery(newGallery);
+
     });
 }
 
-function addGallery () {
-
+function addGallery (gallery) {
+  galleryContainerElement.append(gallery);
+  
 }
 
 function createCard (event) {
@@ -116,8 +118,8 @@ function createCard (event) {
 
   listenersGallery(newGalleryItem);
 
-  galleryContainerElement.prepend(newGalleryItem);
-  
+  addGallery(newGalleryItem);
+    
   popupClose(popupCreate);
   
   event.currentTarget.reset();  
