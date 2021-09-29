@@ -7,3 +7,8 @@
   box-sizing: border-box;
   object-fit: cover;
 }
+
+.gallery__item-img:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
