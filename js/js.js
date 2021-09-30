@@ -78,32 +78,32 @@ const galleryTemplateElement = document.querySelector('#gallery');
 
 formCreateGallery.addEventListener('submit', createCard);
 
-function renderGallery () {
-
-    initialCards.forEach(function (element) {
-    const newGallery = galleryTemplateElement.content.cloneNode(true);
-
-    newGallery.querySelector('.gallery__description-title').textContent = element.name;
-    newGallery.querySelector('.gallery__item-img').src = element.link;
-    newGallery.querySelector('.gallery__description-img').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('gallery__description-img_selected');
-  });
-    newGallery.querySelector('.gallery__item-img').setAttribute('alt', element.name);
-
-    
-    listenersGallery(newGallery);
-    addGallery(newGallery);
-
-    });
-}
-
 function addGallery (gallery) {
   galleryContainerElement.append(gallery);
 }
 
-function createCard (event) {
-  event.preventDefault();
+function addDefaultGalleryElements(element) {
+  const newGallery = galleryTemplateElement.content.cloneNode(true);
 
+  newGallery.querySelector('.gallery__description-title').textContent = element.name;
+  newGallery.querySelector('.gallery__item-img').src = element.link;
+  newGallery.querySelector('.gallery__description-img').addEventListener('click', function (evt) {
+  evt.target.classList.toggle('gallery__description-img_selected');
+});
+  newGallery.querySelector('.gallery__item-img').setAttribute('alt', element.name);
+  return newGallery;
+}
+
+function renderGallery () {
+    initialCards.forEach(function (element) {
+    const card = addDefaultGalleryElements(element);
+    listenersGallery(card);
+    addGallery(card);
+
+    });
+}
+
+function addNewGalleryItems(event) {
   const newGalleryTitle = event.currentTarget.querySelector('input[name="popupTitle"]').value;
   const newGalleryLink = event.currentTarget.querySelector('input[name="popupLink"]').value;
   const newGalleryItem = galleryTemplateElement.content.cloneNode(true);
@@ -115,12 +115,16 @@ function createCard (event) {
   });
   newGalleryItem.querySelector('.gallery__item-img').setAttribute('alt', newGalleryTitle);
 
-  listenersGallery(newGalleryItem);
+  return newGalleryItem;
+}
 
+function createCard (event) {
+  event.preventDefault();
+
+  const newGalleryItem = addNewGalleryItems(event);
+  listenersGallery(newGalleryItem);
   addGallery(newGalleryItem);
-    
   popupClose(popupCreate);
-  
   event.currentTarget.reset();  
 }
 
@@ -128,13 +132,11 @@ renderGallery();
 
 function deleteGallery (event) {
   const galleryItem = event.currentTarget.closest('.gallery__item');
-
   galleryItem.remove();
 }
 
 function listenersGallery (items) {
   items.querySelector(".gallery__basket").addEventListener("click", deleteGallery);
-  items.querySelector(".gallery__item-img").addEventListener('click', () => openPopup(popImg));
   items.querySelector(".gallery__item-img").addEventListener('click', doModalImage);
 }
 
@@ -143,6 +145,7 @@ const newImage = document.querySelector('.popup__image-zoom');
 const modalText = document.querySelector('#image-show');
 
 function doModalImage (event) {
+  openPopup(popImg);
   const webImage = event.currentTarget.closest(".gallery__item-img");
   
   newImage.src = webImage.src;
