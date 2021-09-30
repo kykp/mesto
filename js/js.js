@@ -144,8 +144,3 @@ function doModalImage (event) {
 
   txt.textContent = newTitleContent.textContent;
 }
-
-const popImg = document.querySelector('#image-show');
-const popImgClose = popImg.querySelector('.popup__close');
-
-popImgClose.addEventListener('click', () => popupClose(popImg));
