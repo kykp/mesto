@@ -91,6 +91,7 @@ function addDefaultGalleryElements(element) {
   evt.target.classList.toggle('gallery__description-img_selected');
 });
   newGallery.querySelector('.gallery__item-img').setAttribute('alt', element.name);
+  listenersGallery(newGallery);
   return newGallery;
 }
 
@@ -103,27 +104,14 @@ function renderGallery () {
     });
 }
 
-function addNewGalleryItems(event) {
-  const newGalleryTitle = event.currentTarget.querySelector('input[name="popupTitle"]').value;
-  const newGalleryLink = event.currentTarget.querySelector('input[name="popupLink"]').value;
-  const newGalleryItem = galleryTemplateElement.content.cloneNode(true);
-
-  newGalleryItem.querySelector('.gallery__description-title').textContent = newGalleryTitle;
-  newGalleryItem.querySelector('.gallery__item-img').src = newGalleryLink;
-  newGalleryItem.querySelector('.gallery__description-img').addEventListener('click', function (evt) {
-    evt.target.classList.toggle('gallery__description-img_selected'); 
-  });
-  newGalleryItem.querySelector('.gallery__item-img').setAttribute('alt', newGalleryTitle);
-
-  return newGalleryItem;
-}
-
 function createCard (event) {
   event.preventDefault();
-
-  const newGalleryItem = addNewGalleryItems(event);
-  listenersGallery(newGalleryItem);
-  addGallery(newGalleryItem);
+  const data = {
+    name: document.getElementById('popupTitle').value,
+    link: document.getElementById('popupLink').value,
+  };
+  
+  addGallery(addDefaultGalleryElements(data));
   popupClose(popupCreate);
   event.currentTarget.reset();  
 }
