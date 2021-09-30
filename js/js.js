@@ -52,11 +52,17 @@ function popupClose (popUp) {
     popUp.classList.remove('popup_active');
 }
 
-popupEditButton.addEventListener('click', () => openPopup(popupEdit));
-popupEditButton.addEventListener('click', function renderValue(){
+function renderValue() {
   webTitle.value = profileTitle.textContent;
   webSubtitle.value = profileSubtitle.textContent;
+}
+
+popupEditButton.addEventListener('click', () => {
+  openPopup(popupEdit);
+  renderValue();
 });
+
+
 popupEditClose.addEventListener('click', () => popupClose(popupEdit));
 
 popupCreateButton.addEventListener('click', () => openPopup(popupCreate));
@@ -144,8 +150,3 @@ function doModalImage (event) {
 
   txt.textContent = newTitleContent.textContent;
 }
-
-const popImg = document.querySelector('#image-show');
-const popImgClose = popImg.querySelector('.popup__close');
-
-popImgClose.addEventListener('click', () => popupClose(popImg));
