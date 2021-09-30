@@ -133,7 +133,6 @@ const newImage = document.querySelector('.popup__image-zoom');
 const modalText = document.querySelector('#image-show');
 
 function doModalImage (event) {
-  openPopup(popImg);
   const webImage = event.currentTarget.closest(".gallery__item-img");
   
   newImage.src = webImage.src;
