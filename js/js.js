@@ -82,13 +82,9 @@ const galleryContainerElement = document.querySelector('.gallery');
 const formCreateGallery = document.querySelector('[name="createGalleryForm"]');
 const galleryTemplateElement = document.querySelector('#gallery');
 
-formCreateGallery.addEventListener('submit', createCard);
+formCreateGallery.addEventListener('submit', submitCardForm);
 
-function addGallery (gallery) {
-  galleryContainerElement.append(gallery);
-}
-
-function addDefaultGalleryElements(element) {
+function createGalleryElement(element) {
   const newGallery = galleryTemplateElement.content.cloneNode(true);
 
   newGallery.querySelector('.gallery__description-title').textContent = element.name;
@@ -103,21 +99,20 @@ function addDefaultGalleryElements(element) {
 
 function renderGallery () {
     initialCards.forEach(function (element) {
-    const card = addDefaultGalleryElements(element);
+    const card = createGalleryElement(element);
     listenersGallery(card);
-    addGallery(card);
+    galleryContainerElement.append(card);
 
     });
 }
 
-function createCard (event) {
+function submitCardForm (event) {
   event.preventDefault();
   const data = {
     name: document.getElementById('popupTitle').value,
     link: document.getElementById('popupLink').value,
   };
-  
-  addGallery(addDefaultGalleryElements(data));
+  galleryContainerElement.prepend(createGalleryElement(data));
   popupClose(popupCreate);
   event.currentTarget.reset();  
 }
