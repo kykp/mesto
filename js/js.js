@@ -46,15 +46,43 @@ const popImg = document.querySelector('#image-show');
 const popImgClose = popImg.querySelector('.popup__close');
 const newImage = document.querySelector('.popup__image-zoom');
 const modalText = document.querySelector('#image-show');
-const newButton = popupCreate.querySelector('.popup__button');
+const page = document.querySelector('.page');
 
+
+function closePopupKey () {
+  
+  document.addEventListener('keydown', function(evt) {
+     if (evt.key === 'Escape') {
+      popupClose();
+    }
+  });
+}
+
+// closePopupKey ();
+
+function handleClosePopupClick(evt) {
+  const target = evt.target;
+
+  if (target.classList.contains('popup__close') || target.classList.contains('popup') || closePopupKey() === true){
+    popupClose();
+  } 
+}
 
 function openPopup (popUp) {
     popUp.classList.add('popup_active');
+    page.addEventListener('click', handleClosePopupClick);
 }
-function popupClose (popUp) {
-    popUp.classList.remove('popup_active');
+
+function popupClose () {
+  const activePopup = document.querySelector('.popup_active');
+
+  if(activePopup) {
+    activePopup.classList.remove('popup_active');
+    page.removeEventListener('click', handleClosePopupClick);
+  } 
+      
 }
+
 function renderValue() {
   webTitle.value = profileTitle.textContent;
   webSubtitle.value = profileSubtitle.textContent;
@@ -126,7 +154,6 @@ popupEditClose.addEventListener('click', () => popupClose(popupEdit));
 
 popupCreateButton.addEventListener('click',() => {
   openPopup(popupCreate);
-  toggleButtonState(newButton, false);
 });
 
 popupCreateClose.addEventListener('click', () => popupClose(popupCreate));
@@ -134,89 +161,3 @@ formProfile.addEventListener('submit', submitProfileForm);
 formCreateGallery.addEventListener('submit', submitCardForm);
 
 renderGallery();
-
-const showError = (errorElement, inputElement, config) => {
-  errorElement.textContent = inputElement.validationMessage;
-  inputElement.classList.add(config.inputErrorClass);
-}
-const hideError = (errorElement, inputElement, config) => {
-  errorElement.textContent = inputElement.validationMessage;
-  inputElement.classList.remove(config.inputErrorClass);
-}
-
-const checkInputValidity = (formElement, inputElement, config) => {
-    const isInputNotValid = !inputElement.validity.valid;
-    const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
-
-    if(isInputNotValid) {
-      showError(errorElement, inputElement, config);
-    } else {
-      hideError(errorElement, inputElement, config);
-    }
-
-} 
-
-const toggleButtonState = (button, isActive, config) => {
-  if(isActive) {
-    button.classList.remove(config.inactiveButtonClass);
-    // button.classList.remove("popup__button_invalid");
-    button.disabled = false;
-  } else {
-    button.classList.add(config.inactiveButtonClass);
-    // button.classList.add("popup__button_invalid");
-    button.disabled = true;
-  }
-}
-
-const setEventListeners = (formElement, config) => { 
-  const inputsList = formElement.querySelectorAll(config.inputSelector);
-  const submitButton = formElement.querySelector(config.submitButtonSelector);
- 
-
-  Array.from(inputsList).forEach(inputElement => {
-          inputElement.addEventListener('input', () => {
-                const isFormValid = formElement.checkValidity();
-                checkInputValidity(formElement, inputElement, config);
-                toggleButtonState(submitButton, isFormValid, config);
-      });
-    });
-
-  formElement.addEventListener('submit', (evt) => {
-    evt.preventDefault();
-});
-
-}
-
-const enableValidation = (config) => {
-  const forms = document.querySelectorAll(config.formSelector);
-  Array.from(forms).forEach(formElement => {
-      setEventListeners(formElement, config);
-  });
-}
-
-
-const validationConfig = {
-  formSelector: '.popup__container-item',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_invalid',
-  inputErrorClass: 'popup__input_state_invalid',
-}; 
-
-enableValidation(validationConfig);
-
-
-
-
-
-document.addEventListener('keydown', function(evt) {
-  if (evt.key === 'Escape') {
-    popupClose(popupEdit);
-    popupClose(popupCreate);
-    popupClose(popImg);
-  }
-});
-
-// document.addEventListener("click",	function (event) {
-//   console.log(event.target);
-// })
