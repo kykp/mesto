@@ -49,19 +49,16 @@ const modalText = document.querySelector('#image-show');
 const page = document.querySelector('.page');
 
 
-function closePopupKey () {
-  
-  document.addEventListener('keydown', function(evt) {
-     if (evt.key === 'Escape') {
+function closePopupKey (evt) {
+      if (evt.key === 'Escape') {
       popupClose();
     }
-  });
-}
+ }
 
 function handleClosePopupClick(evt) {
   const target = evt.target;
 
-  if (target.classList.contains('popup__close') || target.classList.contains('popup') || closePopupKey() === true){
+  if (target.classList.contains('popup__close') || target.classList.contains('popup')){
     popupClose();
   } 
 }
@@ -69,14 +66,15 @@ function handleClosePopupClick(evt) {
 function openPopup (popUp) {
     popUp.classList.add('popup_active');
     page.addEventListener('mousedown', handleClosePopupClick);
+    document.addEventListener('keydown', closePopupKey);
 }
 
 function popupClose () {
   const activePopup = document.querySelector('.popup_active');
-
   if(activePopup) {
     activePopup.classList.remove('popup_active');
     page.removeEventListener('mousedown', handleClosePopupClick);
+    document.removeEventListener('keydown', closePopupKey);
   } 
       
 }
