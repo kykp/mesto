@@ -58,8 +58,6 @@ function closePopupKey () {
   });
 }
 
-// closePopupKey ();
-
 function handleClosePopupClick(evt) {
   const target = evt.target;
 
@@ -70,7 +68,7 @@ function handleClosePopupClick(evt) {
 
 function openPopup (popUp) {
     popUp.classList.add('popup_active');
-    page.addEventListener('click', handleClosePopupClick);
+    page.addEventListener('mousedown', handleClosePopupClick);
 }
 
 function popupClose () {
@@ -78,7 +76,7 @@ function popupClose () {
 
   if(activePopup) {
     activePopup.classList.remove('popup_active');
-    page.removeEventListener('click', handleClosePopupClick);
+    page.removeEventListener('mousedown', handleClosePopupClick);
   } 
       
 }

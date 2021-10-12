@@ -4,11 +4,11 @@ popupCreateButton.addEventListener('click',() => {
     toggleButtonState(newButton, false, validationConfig);
   });
 
-  
 const showError = (errorElement, inputElement, config) => {
     errorElement.textContent = inputElement.validationMessage;
     inputElement.classList.add(config.inputErrorClass);
   }
+
   const hideError = (errorElement, inputElement, config) => {
     errorElement.textContent = inputElement.validationMessage;
     inputElement.classList.remove(config.inputErrorClass);
@@ -62,7 +62,7 @@ const showError = (errorElement, inputElement, config) => {
        });
   }
   
-  
+
   const validationConfig = {
     formSelector: '.popup__container-item',
     inputSelector: '.popup__input',
@@ -70,17 +70,5 @@ const showError = (errorElement, inputElement, config) => {
     inactiveButtonClass: 'popup__button_invalid',
     inputErrorClass: 'popup__input_state_invalid',
   }; 
-  
+ 
   enableValidation(validationConfig);
-  
-//   document.addEventListener('keydown', function(evt) {
-//     if (evt.key === 'Escape') {
-//       popupClose(popupEdit);
-//       popupClose(popupCreate);
-//       popupClose(popImg);
-//     }
-//   });
-  
-  // document.addEventListener("click",	function (event) {
-  //   console.log(event.target);
-  // })
