@@ -5,18 +5,21 @@
   line-height: 22px;
   color: #545454;
   max-width: 880px;
+  display: flex;
+  min-width: 880px;
 }
 @media screen and (max-width: 910px) {
   .footer {
     max-width: 580px;
+    min-width: 580px;
   }
 }
 
 @media screen and (max-width: 620px) {
   .footer {
     max-width: 282px;
+    min-width: 282px;
     font-size: 14px;
     line-height: 17px;
   }
 }
-

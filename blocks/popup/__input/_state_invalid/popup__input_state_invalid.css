@@ -1,0 +1,5 @@
+.popup__input_state_invalid:invalid:not(:placeholder-shown) {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ff0000;
+}

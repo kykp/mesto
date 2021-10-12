@@ -38,10 +38,30 @@
         <div class="popup" id="edit">
           <div class="popup__container">
             <h2 class="popup__profile">Редактировать профиль</h2>
-            <form name="profileForm" class="popup__container-item">
-              <input name="popupTitle" type="text" class="popup__input" />
-              <input name="popupSubtitle" type="text" class="popup__input" />
-              <button type="submit" class="popup__button">Сохранить</button>
+            <form name="profileForm" class="popup__container-item" novalidate>
+              <input
+                name="popupTitle"
+                id="name-card"
+                type="text"
+                class="popup__input popup__input_state_invalid"
+                minlength="2"
+                maxlength="40"
+                required
+              />
+              <span id="name-card-error" class="error"></span>
+              <input
+                name="popupSubtitle"
+                id="span-card"
+                type="text"
+                class="popup__input popup__input_state_invalid"
+                minlength="2"
+                maxlength="200"
+                required
+              />
+              <span id="span-card-error" class="error"></span>
+              <button type="submit" class="popup__button popup__button_invalid">
+                Сохранить
+              </button>
             </form>
 
             <button type="button" class="popup__close link-hover"></button>
@@ -51,21 +71,31 @@
         <div class="popup" id="create">
           <div class="popup__container">
             <h2 class="popup__profile">Новое место</h2>
-            <form name="createGalleryForm" class="popup__container-item">
+            <form
+              name="createGalleryForm"
+              class="popup__container-item"
+              novalidate
+            >
               <input
                 name="popupTitle"
                 type="text"
-                class="popup__input"
+                class="popup__input popup__input_state_invalid"
                 placeholder="Название"
                 id="popupTitle"
+                minlength="2"
+                maxlength="30"
+                required
               />
+              <span id="popupTitle-error" class="error"></span>
               <input
                 name="popupLink"
-                type="text"
-                class="popup__input"
+                type="url"
+                class="popup__input popup__input_state_invalid"
                 placeholder="Ссылка на картинку"
                 id="popupLink"
+                required
               />
+              <span id="popupLink-error" class="error"></span>
               <button type="submit" class="popup__button">Создать</button>
             </form>
             <button type="button" class="popup__close link-hover"></button>
@@ -95,7 +125,7 @@
         </div>
       </div>
     </template>
-
     <script src="./js/js.js"></script>
+    <script src="./js/validate.js"></script>
   </body>
 </html>

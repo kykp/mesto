@@ -2,6 +2,8 @@
   font-family: "Inter", Arial, Helvetica, sans-serif;
   margin: 0 auto;
   padding-bottom: 60px;
+
+  margin-top: auto;
 }
 
 @media screen and (max-width: 400px) {
