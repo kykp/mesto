@@ -61,26 +61,21 @@ function handleClosePopupClick(evt) {
   } 
 }
 
-
-
-
 function errorsClear (popUp) {
   const span = popUp.querySelectorAll('.error');
   const button = popUp.querySelector('.popup__button');
 
   span.forEach(function (element) {
     element.textContent="";
-    button.disabled = false;
-  });
- 
+     });
+  button.disabled = false;
 }
 
 function openPopup (popUp) {
   popUp.classList.add('popup_active');
   document.addEventListener('keydown', closePopupKey);
-   
-  errorsClear(popUp);
 }
+
 
 function popupClose () {
   const activePopup = document.querySelector('.popup_active');
@@ -166,6 +161,7 @@ popImgClose.addEventListener('click', () => popupClose(popImg));
 popupEditButton.addEventListener('click', () => {
   openPopup(popupEdit);
   renderValue();
+  errorsClear(popupEdit);
 });
 popupEditClose.addEventListener('click', () => popupClose(popupEdit));
 
