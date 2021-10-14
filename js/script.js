@@ -70,13 +70,15 @@ function errorsClear (popUp) {
 
   span.forEach(function (element) {
     element.textContent="";
+    button.disabled = false;
   });
-  button.disabled = false;
+ 
 }
 
 function openPopup (popUp) {
   popUp.classList.add('popup_active');
   document.addEventListener('keydown', closePopupKey);
+   
   errorsClear(popUp);
 }
 
@@ -88,8 +90,6 @@ function popupClose () {
     document.removeEventListener('keydown', closePopupKey);
    } 
 }
-
-
 
 function renderValue() {
   webTitle.value = profileTitle.textContent;
